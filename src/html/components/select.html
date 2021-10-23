@@ -1,0 +1,8 @@
+<select class="select" name="" >
+  @@if (context.placeholder) {
+  <option value="hide">@@context.placeholder</option>
+  }
+  @@for (var i = 0; i < context.arr.length; i++) {
+  <option value="`+context.arr[i]+`">`+context.arr[i]+`</option>
+  }
+</select>

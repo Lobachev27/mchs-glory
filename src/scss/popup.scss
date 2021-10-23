@@ -1,0 +1,166 @@
+@import "partials/params";
+@import "partials/mixins";
+
+@-moz-document url-prefix() {
+  .popup__wrapper {
+    scrollbar-width: none;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(34, 34, 34, 0.6);
+  z-index: 100;
+  transition: opacity 0.3s ease-in;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &#searchPopup {
+    background: none;
+    margin-top: 60px;
+    @media screen and (min-width: $tablet1) {
+      margin-top: 70px;
+    }
+    @media screen and (min-width: $tablet2) {
+      margin-top: 85px;
+    }
+
+    & .container {
+      height: 100%;
+    }
+
+    & .popup__wrapper {
+      height: calc(100vh - 60px);
+      padding: 30px 0;
+      box-shadow: none;
+      @media screen and (min-width: $tablet1) {
+        height: calc(100vh - 70px);
+        padding-top: 100px;
+      }
+      @media screen and (min-width: $tablet2) {
+        height: calc(100vh - 85px);
+        padding-top: 150px;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 30px 15px;
+    background-color: $blue;
+    border-radius: 0;
+    width: 100%;
+    max-height: 100%;
+    box-shadow: 0 12px 44px rgba(0,0,0, 0.16);
+    border: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    @media screen and (min-width: $tablet1) {
+      padding: 30px;
+    }
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      height: 4px;
+      width: 4px;
+      cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 4px #98B7D3;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $white;
+      border-radius: 4px;
+      outline: none;
+      background-clip: border-box;
+      cursor: pointer;
+    }
+  }
+
+  &__form {
+    position: relative;
+    width: 100%;
+    max-width: 990px;
+    margin: 0 auto;
+
+    & .row {
+      flex-direction: column;
+      margin-top: 0;
+      @media screen and (min-width: $tablet1) {
+        flex-direction: row;
+        margin-top: 20px;
+      }
+    }
+
+    & .input {
+      color: $white;
+      border: 2px solid $white;
+
+      &::placeholder {
+        color: #98B7D3;
+      }
+
+      &__box {
+        & svg {
+          fill: $white;
+        }
+      }
+
+      &__submit {
+        & svg {
+          fill: $white;
+        }
+      }
+    }
+
+    & .search__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      padding-bottom: 160px;
+      @media screen and (min-width: $tablet1) {
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+
+    & .select {
+      &-styled {
+        color: $white;
+        border: 2px solid $white;
+
+        &:not([rel]) {
+          color: #98B7D3;
+        }
+
+        &:after {
+          background: url("../img/angle-white.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+
+        &.active {
+          border: 2px solid $white;
+        }
+      }
+    }
+  }
+}

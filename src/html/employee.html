@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": ""
+})
+
+<body>
+@@include("./components/header.html", {
+  context: {
+    "class": ""
+  }
+})
+
+<main class="main">
+  @@include("./components/intro-list.html", {
+    context: {
+      "title": "Сотрудники",
+      "description": "Не на словах, а на деле! Наши герои спасют людей по всему миру. «Предотвращение, спасение и помощь!»",
+      arr: ["./img/intro-img-e-01.png", "./img/intro-img-e-02.png", "./img/intro-img-e-03.png", "./img/intro-img-e-04.png", "./img/intro-img-e-05.png", "./img/intro-img-e-06.png"]
+    }
+  })
+
+  @@include("./components/search.html")
+
+  @@include("./components/employee-list.html", {
+    context: {
+      "title": "",
+      "pagination": true,
+      arr: [
+        {"img": "./img/employee-01.jpg", "name": "Петров Лев Владимирович", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-02.jpg", "name": "Кузнецов Виталий Валерьевич", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-03.jpg", "name": "Зайцев Павел Сергеевич", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-01.jpg", "name": "Петров Лев Владимирович", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-02.jpg", "name": "Кузнецов Виталий Валерьевич", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-03.jpg", "name": "Зайцев Павел Сергеевич", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-01.jpg", "name": "Петров Лев Владимирович", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-02.jpg", "name": "Кузнецов Виталий Валерьевич", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-03.jpg", "name": "Зайцев Павел Сергеевич", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-01.jpg", "name": "Петров Лев Владимирович", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-02.jpg", "name": "Кузнецов Виталий Валерьевич", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-03.jpg", "name": "Зайцев Павел Сергеевич", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-01.jpg", "name": "Петров Лев Владимирович", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-02.jpg", "name": "Кузнецов Виталий Валерьевич", "position": "Пожарный", "link": "employee-detail.html"},
+        {"img": "./img/employee-03.jpg", "name": "Зайцев Павел Сергеевич", "position": "Пожарный", "link": "employee-detail.html"},
+      ]
+    }
+  })
+</main>
+
+@@include("./components/footer.html", {
+  context: {
+    "class": "footer-employee"
+  }
+})
+
+@@include("./components/search-popup.html", {
+  context: {
+    "id": "searchPopup"
+  }
+})
+
+@@include("./shared/script.html")
+</body>
+</html>

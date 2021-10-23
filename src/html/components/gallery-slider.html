@@ -1,0 +1,36 @@
+<section class="gallery">
+  <div class="gallery__bg">
+    <div class="gallery__wrap">
+      <div class="gallery__list"></div>
+    </div>
+    <div class="gallery__wrap">
+      <div class="gallery__list"></div>
+    </div>
+  </div>
+
+  <div class="gallery__wrap">
+    <div class="gallery__list">
+      @@for (var i = 0; i < context.arr.length; i++) {
+      <div class="gallery__item"><img src="`+context.arr[i]+`" alt=""></div>
+      }
+      @@for (var i = context.arr.length - 1; i < context.arr.length; i++) {
+      <div class="gallery__item"><img src="`+context.arr[i]+`" alt=""></div>
+      }
+      <div class="gallery__text">@@context.text1</div>
+      <div class="gallery__text">@@context.text2</div>
+    </div>
+  </div>
+
+  <div class="gallery__wrap">
+    <div class="gallery__list">
+      @@for (var i = 0; i < context.arr.length; i++) {
+      <div class="gallery__item"><img src="`+context.arr[i]+`" alt=""></div>
+      }
+      @@for (var i = context.arr.length - 1; i < context.arr.length; i++) {
+      <div class="gallery__item"><img src="`+context.arr[i]+`" alt=""></div>
+      }
+      <div class="gallery__text">@@context.text1</div>
+      <div class="gallery__text">@@context.text2</div>
+    </div>
+  </div>
+</section>

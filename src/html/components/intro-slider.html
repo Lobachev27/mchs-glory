@@ -1,0 +1,46 @@
+<section class="intro intro-slider">
+  <div class="intro__bg"></div>
+  <div class="container">
+    <div class="intro__info">
+      <h1 class="title title-h1 title-white">@@context.title</h1>
+      <div class="intro__description">@@context.description</div>
+    </div>
+    <div class="intro__bottom">
+      <div class="intro__text">@@context.text1</div>
+      <div class="intro__text">@@context.text2</div>
+    </div>
+  </div>
+  <div class="intro__images-mobile">
+    <div class="intro__images__wrap">
+      <div class="intro__images__list">
+      @@for (var i = 0; i < context.arr.length; i++) {
+      <div class="intro__img"><img src="`+context.arr[i]+`" alt=""></div>
+      }
+      @@for (var i = 0; i < 1; i++) {
+      <div class="intro__img"><img src="`+context.arr[i]+`" alt=""></div>
+      }
+      </div>
+    </div>
+
+    <div class="intro__images__wrap">
+      <div class="intro__images__list">
+        @@for (var i = 0; i < context.arr.length; i++) {
+        <div class="intro__img"><img src="`+context.arr[i]+`" alt=""></div>
+        }
+        @@for (var i = 0; i < 1; i++) {
+        <div class="intro__img"><img src="`+context.arr[i]+`" alt=""></div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="intro__images-desktop">
+    @@for (var i = 0; i < (context.arr.length/3); i++) {
+    <div class="intro__img">
+      <img src="`+context.arr[i]+`" alt="">
+      <img src="`+context.arr[i+6]+`" alt="">
+      <img src="`+context.arr[i+12]+`" alt="">
+    </div>
+    }
+  </div>
+</section>

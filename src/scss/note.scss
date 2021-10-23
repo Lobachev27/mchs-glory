@@ -1,0 +1,163 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.note {
+  padding: 60px 0;
+  background-color: $gray-light;
+  @media screen and (min-width: $tablet2) {
+    padding: 80px 0;
+  }
+
+  &__info {
+    width: 100%;
+    max-width: 990px;
+    margin: 0 auto;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 20px auto 0;
+    @media screen and (min-width: $tablet1) {
+      margin: 40px auto 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.active {
+      & .note__caption {
+        &:after {
+          transform: translateY(-50%) rotate(45deg);
+          transition: transform 0.3s;
+        }
+      }
+
+      & .note__more {
+        max-height: 600px;
+        opacity: 1;
+        overflow: visible;
+        transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+      }
+    }
+  }
+
+  &__caption {
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    color: $black;
+    line-height: 22px;
+    width: max-content;
+    transition: color 0.3s;
+    @media screen and (min-width: $tablet1) {
+      font-size: 22px;
+      line-height: 24px;
+    }
+    @media screen and (min-width: $tablet2) {
+      font-size: 24px;
+      line-height: 26px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      top: 50%;
+      right: -24px;
+      transform: translateY(-50%);
+      background: url("../img/icon-plus.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: background 0.3s, transform 0.3s;
+      @media screen and (min-width: $tablet1) {
+        width: 16px;
+        height: 16px;
+        right: -30px;
+      }
+    }
+
+    &:hover {
+      color: $orange;
+      transition: color 0.3s;
+      cursor: pointer;
+
+      &:after {
+        background: url("../img/icon-plus-orange.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: background 0.3s, transform 0.3s;
+      }
+    }
+  }
+
+  &__more {
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    max-height: 0;
+
+    &-content {
+      font-size: 16px;
+      line-height: 22px;
+      padding: 10px 0 20px;
+      @media screen and (min-width: $tablet1) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      @media screen and (min-width: $tablet2) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+
+      & p {
+        line-height: 22px;
+        @media screen and (min-width: $tablet1) {
+          line-height: 24px;
+        }
+        @media screen and (min-width: $tablet2) {
+          line-height: 26px;
+        }
+
+        & a {
+          color: $orange;
+          transition: opacity 0.3s;
+
+          &:hover {
+            opacity: 0.8;
+            transition: opacity 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  &__video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 980px;
+    max-height: 552px;
+    height: 52vw;
+    margin: 20px auto 0;
+    @media screen and (min-width: $tablet1) {
+      height: 54vw;
+    }
+
+    & iframe{
+      width: 100%;
+      height: 100%;
+    }
+
+    & video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

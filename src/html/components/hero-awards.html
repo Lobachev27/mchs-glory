@@ -1,0 +1,13 @@
+<div class="hero__box-awards">
+  @@for (var i = 0; i < context.arr.length; i++) {
+  <div class="hero__box-awards-item">
+    <div class="hero__box-awards-img">
+      <img src="`+context.arr[i].img+`" alt="">
+    </div>
+    <div class="tooltip">
+      <div class="tooltip__caption">`+context.arr[i].caption+`</div>
+      <div class="tooltip__description">`+context.arr[i].description+`</div>
+    </div>
+  </div>
+  }
+</div>

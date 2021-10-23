@@ -1,0 +1,17 @@
+<section class="intro intro-list">
+  <div class="intro__bg"></div>
+  <div class="container">
+    <div class="intro__info">
+      <h1 class="title title-h1 title-white">@@context.title</h1>
+      <div class="intro__description">@@context.description</div>
+    </div>
+  </div>
+  <div class="intro__images">
+    @@for (var i = 0; i < context.arr.length; i++) {
+    <div class="intro__img"><img src="`+context.arr[i]+`" alt=""></div>
+    }
+    @@for (var i = 0; i < 1; i++) {
+    <div class="intro__img"><img src="`+context.arr[0]+`" alt=""></div>
+    }
+  </div>
+</section>

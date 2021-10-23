@@ -1,0 +1,198 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.search {
+  padding: 60px 0;
+  background-color: $gray-light;
+  @media screen and (min-width: $tablet2) {
+    padding: 80px 0;
+  }
+
+  & .container {
+    max-width: 990px;
+    margin: 0 auto;
+  }
+
+  &__form {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+
+    & .row {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+      @media screen and (min-width: $tablet1) {
+        flex-direction: row;
+        margin-top: 20px;
+      }
+    }
+
+    & .row.row-order {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      order: -1;
+      @media screen and (min-width: $tablet1) {
+        flex-direction: row;
+      }
+    }
+
+    & .search__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      order: -1;
+      @media screen and (min-width: $tablet1) {
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 0;
+        order: 2;
+      }
+
+      & .btn-r {
+        color: $blue-light;
+        border: 2px solid $blue-light;
+
+        &:hover {
+          border: 2px solid $blue-light-hover;
+        }
+      }
+    }
+  }
+
+  &__wrap {
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    max-height: 0;
+
+    & .row {
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+      max-height: 0;
+      margin-top: 0;
+      @media screen and (min-width: $tablet1) {
+        flex-direction: row;
+        margin-top: 20px;
+      }
+    }
+
+    &.active {
+      max-height: 550px;
+      opacity: 1;
+      overflow: visible;
+      transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+      @media screen and (min-width: $tablet1) {
+        max-height: 400px;
+      }
+
+      & .row {
+        max-height: 180px;
+        opacity: 1;
+        overflow: visible;
+        transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+        @media screen and (min-width: $tablet1) {
+          max-height: 80px;
+        }
+      }
+
+      & + .row {
+        & .search__show {
+          font-size: 0;
+          padding: 0;
+          transition: font-size 0.5s, padding 0.5s;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__hide,
+  &__show {
+    display: block;
+    font-size: 16px;
+    width: max-content;
+    white-space: nowrap;
+    color: $black;
+    margin-top: 20px;
+    transition: color 0.3s, font-size 0.5s;
+    @media screen and (min-width: $tablet1) {
+      font-size: 18px;
+      margin-top: 0;
+    }
+    @media screen and (min-width: $desktop1) {
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: $orange;
+      transition: color 0.3s, font-size 0.3s;
+      cursor: pointer;
+    }
+  }
+
+  &__show {
+    position: relative;
+    margin: 0 auto ;
+    @media screen and (min-width: $tablet1) {
+      margin-right: 0;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -20px;
+      width: 12px;
+      height: 12px;
+      background: url("../img/icon-filter.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      transform: translateY(-50%);
+      transition: background 0.3s;
+      @media screen and (min-width: $tablet1) {
+        width: 14px;
+        height: 14px;
+        left: -22px;
+      }
+      @media screen and (min-width: $desktop1) {
+        width: 16px;
+        height: 16px;
+        left: -24px;
+      }
+    }
+
+    &:hover {
+      &:before {
+        background: url("../img/icon-filter-orange.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: background 0.3s;
+      }
+    }
+  }
+
+  &__result {
+    font-size: 16px;
+    color: $black;
+    order: -1;
+    margin-bottom: 10px;
+    @media screen and (min-width: $tablet1) {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: $desktop1) {
+      font-size: 20px;
+    }
+  }
+}

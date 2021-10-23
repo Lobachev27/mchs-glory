@@ -1,0 +1,45 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.social {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto 0;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid $white;
+    margin-right: 8px;
+    background-color: transparent;
+    transition: opacity 0.5s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    opacity: 0.4;
+
+    &:first-child {
+      & svg {
+        width: 17px;
+        height: 21px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      transition: opacity 0.5s;
+      opacity: 1;
+    }
+
+    & svg {
+      height: 13px;
+      fill: $white;
+    }
+  }
+}

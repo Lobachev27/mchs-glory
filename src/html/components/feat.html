@@ -1,0 +1,24 @@
+<section class="feat">
+  <div class="container">
+    <div class="feat__info">
+      <h2 class="title title-h2 title-blue">Подвиги</h2>
+      <div class="feat__description">@@context.feat</div>
+      <h2 class="title title-h2 title-blue">Награды</h2>
+      <div class="feat__description">@@context.awards</div>
+      <ul class="feat__awards">
+        @@for (var i = 0; i < context.arr.length; i++) {
+        <li class="feat__awards-item">
+          <div class="feat__awards-box">
+            <a class="feat__awards-caption" href="`+context.arr[i].link+`">`+context.arr[i].name+`</a>
+            <div class="feat__awards-description">`+context.arr[i].description+`</div>
+          </div>
+          <div class="feat__awards-img">
+            <img src="`+context.arr[i].img+`" alt="">
+            <a href="`+context.arr[i].link+`"></a>
+          </div>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

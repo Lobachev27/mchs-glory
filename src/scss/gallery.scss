@@ -1,0 +1,907 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.gallery {
+  position: relative;
+  background-color: $blue;
+  height: 308px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  @media screen and (min-width: 540px) {
+    height: 437px;
+  }
+  @media screen and (min-width: $tablet1) {
+    height: auto;
+  }
+  @media screen and (min-width: $desktop1) {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../img/awards-bg.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    opacity: 0.1;
+  }
+
+  &__bg {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    @media screen and (min-width: $desktop1) {
+      padding-top: 85px;
+    }
+
+    & .gallery__wrap {
+      animation: ticker 70s infinite linear;
+      @media screen and (min-width: 540px) {
+        animation: ticker 80s infinite linear;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: -4.36%;
+        left: 0;
+        height: 104.32%;
+        width: 100.00%;
+        background: url("../img/triangle-05.png") no-repeat;
+        background-position: center;
+        background-size: contain;
+        overflow: hidden;
+        opacity: 0.12;
+      }
+    }
+  }
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 1822px;
+    height: 308px;
+    animation: ticker 50s infinite linear;
+    @media screen and (min-width: 540px) {
+      width: 2590px;
+      height: 437px;
+      animation: ticker 60s infinite linear;
+    }
+    @media screen and (min-width: $tablet1) {
+      width: 337.50vw;
+      height: 57vw;
+      max-width: 4860px;
+      max-height: 820px;
+    }
+    @media screen and (min-width: $desktop1) {
+      padding-top: 85px;
+    }
+
+    /*&:before {
+      content: '';
+      position: absolute;
+      top: -4.36%;
+      left: 0;
+      height: 104.32%;
+      width: 100.00%;
+      background: url("../img/triangle-05.png") no-repeat;
+      background-position: center;
+      background-size: contain;
+      overflow: hidden;
+      opacity: 0.12;
+    }*/
+  }
+
+  &__list {
+    position: relative;
+    width: 1822px;
+    height: 308px;
+    margin-left: -64px;
+    @media screen and (min-width: 540px) {
+      width: 2590px;
+      height: 437px;
+      margin-left: -90px;
+    }
+    @media screen and (min-width: $tablet1) {
+      width: 337.50vw;
+      height: 57vw;
+      max-width: 4860px;
+      max-height: 820px;
+      margin-left: -11.66vw;
+    }
+    @media screen and (min-width: $desktop2) {
+      margin-left: -168px;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    color: $white;
+    font-size: 9px;
+    line-height: 1.3em;
+    @media screen and (min-width: 540px) {
+      font-size: 12px;
+    }
+    @media screen and (min-width: $tablet1) {
+      font-size: 1.55vw;
+    }
+    @media screen and (min-width: $desktop2) {
+      font-size: 20px;
+    }
+
+    & span {
+      font-family: 'Proxima Nova';
+      font-weight: 700;
+      font-size: 24px;
+      @media screen and (min-width: 540px) {
+        font-size: 32px;
+      }
+      @media screen and (min-width: $tablet1) {
+        font-size: 4.14vw;
+      }
+      @media screen and (min-width: $desktop2) {
+        font-size: 60px;
+      }
+    }
+
+    &:nth-child(42) {
+      top: 63.12%;
+      left: 1.70%;
+    }
+
+    &:nth-child(43) {
+      top: 22.42%;
+      left: 16.10%;
+      @media screen and (min-width: 540px) {
+        top: 23.42%;
+        left: 16.20%;
+      }
+      @media screen and (min-width: $tablet1) {
+        top: 24.02%;
+        left: 16.30%;
+      }
+    }
+  }
+
+  &__item {
+    position: absolute;
+    overflow: hidden;
+    background-color: $white;
+
+    &:nth-child(1) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 13.85%;
+      height: 71.10%;
+      top: 10.85%;
+      left: 6.52%;
+    }
+
+    &:nth-child(2) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 7.04%;
+      height: 36.10%;
+      top: 13.05%;
+      left: 5.84%;
+    }
+
+    &:nth-child(3) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 8.27%;
+      height: 42.20%;
+      top: 37.07%;
+      left: 16.34%;
+    }
+
+    &:nth-child(4) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.37%;
+      height: 17.20%;
+      top: 18.41%;
+      left: 4.32%;
+    }
+
+    &:nth-child(5) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.89%;
+      height: 19.76%;
+      top: 15.72%;
+      left: 20.60%;
+    }
+
+    &:nth-child(6) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 5.12%;
+      height: 26.34%;
+      top: 37.32%;
+      left: 2.53%;
+    }
+
+    &:nth-child(7) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.89%;
+      height: 19.76%;
+      top: 38.68%;
+      left: 22.82%;
+    }
+
+    &:nth-child(8) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.89%;
+      height: 19.76%;
+      top: 40.12%;
+      left: 0.47%;
+    }
+
+    &:nth-child(9) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 2.67%;
+      height: 13.54%;
+      top: 60.00%;
+      left: 23.90%;
+    }
+
+    &:nth-child(10) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 3.89%;
+      height: 19.88%;
+      top: 37.07%;
+      left: 24.90%;
+    }
+
+    &:nth-child(11) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.56%;
+      height: 18.29%;
+      top: 51.83%;
+      left: 25.86%;
+    }
+
+    &:nth-child(12) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 5.12%;
+      height: 26.34%;
+      top: 50.54%;
+      left: 27.80%;
+    }
+
+    &:nth-child(13) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 5.12%;
+      height: 26.34%;
+      top: 22.48%;
+      left: 27.94%;
+    }
+
+    &:nth-child(14) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 6.58%;
+      height: 33.66%;
+      top: 50.44%;
+      left: 29.95%;
+    }
+
+    &:nth-child(15) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 13.85%;
+      height: 71.10%;
+      top: 16.54%;
+      left: 30.25%;
+    }
+
+    &:nth-child(16) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 8.27%;
+      height: 42.20%;
+      top: 18.30%;
+      left: 40.05%;
+    }
+
+    &:nth-child(17) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 3.89%;
+      height: 19.88%;
+      top: 61.94%;
+      left: 44.40%;
+    }
+
+    &:nth-child(18) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 3.89%;
+      height: 19.88%;
+      top: 39.40%;
+      left: 46.58%;
+    }
+
+    &:nth-child(19) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.89%;
+      height: 19.88%;
+      top: 18.20%;
+      left: 46.58%;
+    }
+
+    &:nth-child(20) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 3.40%;
+      height: 17.32%;
+      top: 16.54%;
+      left: 50.80%;
+    }
+
+    &:nth-child(21) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 13.85%;
+      height: 71.10%;
+      top: 10.85%;
+      left: 54.82%;
+    }
+
+    &:nth-child(22) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 7.04%;
+      height: 36.10%;
+      top: 13.05%;
+      left: 54.14%;
+    }
+
+    &:nth-child(23) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 8.27%;
+      height: 42.20%;
+      top: 37.07%;
+      left: 64.64%;
+    }
+
+    &:nth-child(24) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.37%;
+      height: 17.20%;
+      top: 18.41%;
+      left: 52.62%;
+    }
+
+    &:nth-child(25) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.89%;
+      height: 19.76%;
+      top: 15.72%;
+      left: 68.90%;
+    }
+
+    &:nth-child(26) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 5.12%;
+      height: 26.34%;
+      top: 37.32%;
+      left: 50.83%;
+    }
+
+    &:nth-child(27) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.89%;
+      height: 19.76%;
+      top: 38.68%;
+      left: 71.12%;
+    }
+
+    &:nth-child(28) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.89%;
+      height: 19.76%;
+      top: 40.12%;
+      left: 48.77%;
+    }
+
+    &:nth-child(29) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 2.67%;
+      height: 13.54%;
+      top: 60.00%;
+      left: 72.20%;
+    }
+
+    &:nth-child(30) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 3.89%;
+      height: 19.88%;
+      top: 37.07%;
+      left: 73.20%;
+    }
+
+    &:nth-child(31) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.56%;
+      height: 18.29%;
+      top: 51.83%;
+      left: 74.16%;
+    }
+
+    &:nth-child(32) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 5.12%;
+      height: 26.34%;
+      top: 50.54%;
+      left: 76.10%;
+    }
+
+    &:nth-child(33) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 5.12%;
+      height: 26.34%;
+      top: 22.48%;
+      left: 76.24%;
+    }
+
+    &:nth-child(34) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 6.58%;
+      height: 33.66%;
+      top: 50.44%;
+      left: 78.25%;
+    }
+
+    &:nth-child(35) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 13.85%;
+      height: 71.10%;
+      top: 16.54%;
+      left: 78.55%;
+    }
+
+    &:nth-child(36) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 8.27%;
+      height: 42.20%;
+      top: 18.30%;
+      left: 88.42%;
+    }
+
+    &:nth-child(37) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 3.89%;
+      height: 19.88%;
+      top: 61.94%;
+      left: 92.70%;
+    }
+
+    &:nth-child(38) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 3.89%;
+      height: 19.88%;
+      top: 39.40%;
+      left: 94.88%;
+    }
+
+    &:nth-child(39) {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 3.89%;
+      height: 19.88%;
+      top: 18.20%;
+      left: 94.88%;
+    }
+
+    &:nth-child(40) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 3.40%;
+      height: 17.32%;
+      top: 16.54%;
+      left: 99.10%;
+    }
+
+    &:nth-child(41) {
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      width: 3.40%;
+      height: 17.32%;
+      top: 16.54%;
+      left: 2.51%;
+    }
+
+    & img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+
+  &-detail {
+    position: relative;
+    background-color: $blue;
+    padding: 7vw 0;
+    /*width: 100%;
+    height: 308px;*/
+    @media screen and (min-width: 540px) {
+      /*height: 437px;*/
+    }
+    @media screen and (min-width: $tablet1) {
+      /*height: auto;*/
+    }
+    @media screen and (min-width: $desktop2) {
+      padding: 120px 0;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url("../img/awards-bg.jpg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      overflow: hidden;
+      opacity: 0.1;
+      z-index: 1;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 92.20%;
+      width: 93.82%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url("../img/triangle-04.png") no-repeat;
+      background-position: center;
+      background-size: contain;
+      overflow: hidden;
+      opacity: 0.12;
+      z-index: 1;
+    }
+
+    &__wrap {
+      /*position: absolute;
+      width: 540px;
+      height: 308px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      @media screen and (min-width: 540px) {
+        width: 768px;
+        height: 437px;
+      }
+      @media screen and (min-width: $tablet1) {
+        position: relative;
+        width: 100vw;
+        height: 57vw;
+        max-width: 1440px;
+        max-height: 820px;
+        left: 0;
+        transform: translateX(0);
+        margin: 0 auto;
+      }*/
+
+      position: relative;
+      max-width: 1400px;
+      max-height: 659px;
+      width: calc(100% - 30px);
+      height: 45.5vw;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+
+      /*&:before {
+        content: '';
+        position: absolute;
+        !*top: 4.51%;
+        left: 2.29%;
+        height: 92.20%;
+        width: 93.82%;*!
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url("../img/triangle-04.png") no-repeat;
+        background-position: center;
+        background-size: contain;
+        overflow: hidden;
+        opacity: 0.12;
+      }*/
+    }
+
+    &__item {
+      position: absolute;
+      overflow: hidden;
+
+      &:nth-child(1) {
+        width: 30.84%;
+        height: 100%;
+        top: 0;
+        left: 34.55%;
+        z-index: 3;
+      }
+
+      &:nth-child(2) {
+        width: 26.94%;
+        height: 42%;
+        top: 52.29%;
+        left: 11.45%;
+        z-index: 4;
+      }
+
+      &:nth-child(3) {
+        width: 26.94%;
+        height: 42%;
+        top: 6.86%;
+        right: 11.45%;
+        z-index: 5;
+      }
+
+      &:nth-child(4) {
+        width: 27.07%;
+        height: 45.57%;
+        top: 6.86%;
+        left: 7.68%;
+        z-index: 1;
+      }
+
+      &:nth-child(5) {
+        width: 27.07%;
+        height: 45.57%;
+        top: 48.71%;
+        right: 7.68%;
+        z-index: 7;
+      }
+
+      &:nth-child(6) {
+        width: 17.51%;
+        height: 59.71%;
+        top: 25%;
+        left: 0;
+        z-index: 2;
+      }
+
+      &:nth-child(7) {
+        width: 17.51%;
+        height: 59.71%;
+        top: 15.43%;
+        right: 0;
+        z-index: 6;
+      }
+
+      &:nth-child(n + 8) {
+        opacity: 0;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: $black;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 10;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url("../img/icon-search-white.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 10;
+        @media screen and (min-width: $tablet1) {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-position: center top;
+        object-fit: cover;
+      }
+
+      &:hover {
+        &:before {
+          opacity: 0.25;
+          transition: opacity 0.5s;
+        }
+
+        &:after {
+          opacity: 1;
+          transition: opacity 0.5s;
+        }
+      }
+    }
+
+    /*&__item {
+      position: absolute;
+      overflow: hidden;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+      &:nth-child(1) {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        width: 46.74%;
+        height: 71.10%;
+        top: 11.22%;
+        left: 24.58%;
+
+        & img {
+          object-position: center top;
+        }
+      }
+
+      &:nth-child(2) {
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        width: 23.75%;
+        height: 36.10%;
+        top: 13.41%;
+        left: 22.43%;
+
+        &:after {
+          top: 35%;
+        }
+      }
+
+      &:nth-child(3) {
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        width: 27.92%;
+        height: 42.20%;
+        top: 37.44%;
+        left: 57.57%;
+
+        &:after {
+          top: 35%;
+        }
+      }
+
+      &:nth-child(4) {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        width: 13.13%;
+        height: 19.76%;
+        top: 16.22%;
+        left: 15.76%;
+      }
+
+      &:nth-child(5) {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        width: 13.13%;
+        height: 19.76%;
+        top: 16.22%;
+        left: 71.04%;
+      }
+
+      &:nth-child(6) {
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        width: 17.29%;
+        height: 26.34%;
+        top: 37.44%;
+        left: 10.76%;
+
+        &:after {
+          top: 35%;
+        }
+      }
+
+      &:nth-child(7) {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        width: 13.13%;
+        height: 19.76%;
+        top: 40.49%;
+        left: 78.89%;
+      }
+
+      &:nth-child(8) {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        width: 13.13%;
+        height: 19.76%;
+        top: 40.24%;
+        left: 4.31%;
+      }
+
+      &:nth-child(9) {
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        width: 10.00%;
+        height: 15.24%;
+        top: 61.71%;
+        left: 81.32%;
+
+        &:after {
+          top: 35%;
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: $black;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url("../img/icon-search-white.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0;
+        transition: opacity 0.3s;
+        @media screen and (min-width: $tablet1) {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+      }
+
+      &:hover {
+        &:before {
+          opacity: 0.25;
+          transition: opacity 0.5s;
+        }
+
+        &:after {
+          opacity: 1;
+          transition: opacity 0.5s;
+        }
+      }
+    }*/
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@-webkit-keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}

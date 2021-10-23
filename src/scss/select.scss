@@ -1,0 +1,197 @@
+@import "partials/params";
+@import "partials/mixins";
+
+
+.select {
+  display: none;
+  visibility: hidden;
+
+  &-custom {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    color: #98B7D3;
+    width: 100%;
+    height: 40px;
+    user-select: none;
+    @media screen and (min-width: $tablet1) {
+      font-size: 16px;
+      height: 55px;
+    }
+    @media screen and (min-width: $desktop1) {
+      font-size: 17px;
+      height: 70px;
+    }
+  }
+
+  &-styled {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-family: 'Charter';
+    color: $black;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    white-space: nowrap;
+    background-color: transparent;
+    overflow: hidden;
+    border: 2px solid $black;
+    padding: 0 40px 0 15px;
+    letter-spacing: -0.5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: color 0.3s ease-in;
+    z-index: 1;
+    @media screen and (min-width: $tablet1) {
+      font-size: 16px;
+      height: 55px;
+      padding: 0 40px 0 20px;
+    }
+    @media screen and (min-width: $tablet2) {
+      font-size: 18px;
+    }
+    @media screen and (min-width: $desktop1) {
+      font-size: 20px;
+      height: 70px;
+      padding: 0 50px 0 32px;
+    }
+
+    &:not([rel]) {
+      color: rgba(0,0,0, 0.5);
+    }
+
+    &:after {
+      content:"";
+      background: url("../img/angle.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 7px;
+      height: 14px;
+      position: absolute;
+      transform: translate(-50%, -50%) rotate(90deg);
+      top: 50%;
+      right: 12px;
+      transition: transform 0.5s;
+      @media screen and (min-width: $tablet1) {
+        right: 15px;
+      }
+      @media screen and (min-width: $desktop1) {
+        width: 10px;
+        height: 18px;
+        right: 20px;
+      }
+    }
+
+    &.active {
+      border: 2px solid $black;
+      z-index: 2;
+
+      &:after {
+        transform: translate(-50%, -50%) rotate(270deg);
+        transition: transform 0.5s;
+      }
+
+      & + .select-options {
+        z-index: 3;
+      }
+    }
+
+    & span.select-value {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-options {
+    display: none;
+    position: absolute;
+    font-family: 'Charter';
+    top: 40px;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    list-style: none;
+    background-color: $white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    @media screen and (min-width: $tablet1) {
+      top: 55px;
+      max-height: 225px;
+    }
+    @media screen and (min-width: $desktop1) {
+      top: 70px;
+    }
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      height: 4px;
+      width: 4px;
+      cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 4px #98B7D3;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue-light-hover;
+      border-radius: 4px;
+      outline: none;
+      background-clip: border-box;
+      cursor: pointer;
+    }
+
+    & li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: $black;
+      margin: 0;
+      height: 40px;
+      padding: 0 15px;
+      width: 100%;
+      background-color: $white;
+      overflow: hidden;
+      letter-spacing: -0.5px;
+      transition: all 0.3s ease-in;
+      @media screen and (min-width: $tablet1) {
+        font-size: 16px;
+        height: 45px;
+        padding: 0 20px;
+      }
+      @media screen and (min-width: $tablet2) {
+        font-size: 18px;
+      }
+      @media screen and (min-width: $desktop1) {
+        font-size: 20px;
+        padding: 0 32px;
+      }
+
+      &:hover {
+        color: $white;
+        background-color: $blue-light-hover;
+        transition: all 0.15s ease-in;
+      }
+
+      &[rel="hide"] {
+        display: none;
+      }
+
+      & span {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

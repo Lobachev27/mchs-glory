@@ -1,0 +1,56 @@
+<section class="hero-slider">
+  <div class="container">
+    <div class="row">
+      <h2 class="title title-h2 title-blue"><a href="hero.html">Герои нашего времени</a></h2>
+    </div>
+    <div class="hero-slider__wrap">
+      <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+          @@for (var i = 0; i < context.arr.length; i++) {
+          <div class="swiper-slide">
+            <div class="hero__box">
+              <div class="hero__box-img">
+                <img src="`+context.arr[i].img+`" alt="">
+                <a href="`+context.arr[i].link+`"></a>
+              </div>
+              <div class="hero__box-info">
+                <a class="hero__box-name" href="`+context.arr[i].link+`">`+context.arr[i].name+`</a>
+                <div class="hero__box-description">`+context.arr[i].description+`</div>
+                @@include("./hero-awards.html", {
+                  context: {
+                    arr: [
+                      {"img": "./img/awards-4.png", "caption": "Заголовок","description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consectetur earum eius eum harum incidunt laudantium provident quam repellat ut!", },
+                      {"img": "./img/awards-3.png", "caption": "Заголовок","description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consectetur earum eius eum harum incidunt laudantium provident quam repellat ut!", },
+                      {"img": "./img/awards-5.png", "caption": "Заголовок","description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consectetur earum eius eum harum incidunt laudantium provident quam repellat ut!", },
+                      {"img": "./img/awards-1.png", "caption": "Заголовок", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consectetur earum eius eum harum incidunt laudantium provident quam repellat ut!", },
+                    ]
+                  }
+                })
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+        <div class="hero-slider__navigation">
+          <div class="swiper-button-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 443.52 443.52"><path d="M143.492 221.863L336.226 29.129c6.663-6.664 6.663-17.468 0-24.132-6.665-6.662-17.468-6.662-24.132 0l-204.8 204.8c-6.662 6.664-6.662 17.468 0 24.132l204.8 204.8c6.78 6.548 17.584 6.36 24.132-.42 6.387-6.614 6.387-17.099 0-23.712L143.492 221.863z"/></svg>
+          </div>
+          <div class="swiper-button-next">
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 443.52 443.52"><path d="M143.492 221.863L336.226 29.129c6.663-6.664 6.663-17.468 0-24.132-6.665-6.662-17.468-6.662-24.132 0l-204.8 204.8c-6.662 6.664-6.662 17.468 0 24.132l204.8 204.8c6.78 6.548 17.584 6.36 24.132-.42 6.387-6.614 6.387-17.099 0-23.712L143.492 221.863z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-container gallery-thumbs">
+        <div class="swiper-wrapper">
+          @@for (var i = 0; i < context.arr.length; i++) {
+          <div class="swiper-slide">
+            <div class="thumbs__box">
+              <img src="`+context.arr[i].img+`" alt="">
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

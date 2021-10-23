@@ -1,0 +1,297 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.input {
+  font-family: 'Charter';
+  font-size: 14px;
+  font-weight: 400;
+  color: $black;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid $black;
+  padding: 0 40px 0 15px;
+  transition: border 0.3s;
+  @media screen and (min-width: $tablet1) {
+    font-size: 16px;
+    height: 55px;
+    padding: 0 40px 0 20px;
+  }
+  @media screen and (min-width: $tablet2) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: $desktop1) {
+    font-size: 20px;
+    height: 70px;
+    padding: 0 32px;
+  }
+
+  &::placeholder {
+    color: rgba(0,0,0, 0.5);
+  }
+
+  &.validate-error {
+    border: 2px solid #ff7474;
+    transition: border 0.3s;
+  }
+
+  &__box {
+    position: relative;
+    flex: 1 1 100%;
+    width: 100%;
+    line-height: 1;
+    margin-top: 20px;
+    @media screen and (min-width: $tablet1) {
+      width: auto;
+      margin-top: 0;
+      margin-right: 20px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & span.validate-error{
+      color: #ff7474;
+      font-size: 10px;
+      margin-top: 5px;
+      @media screen and (min-width: $tablet1) {
+        font-size: 11px;
+      }
+    }
+
+    & svg {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      fill: $black;
+      @media screen and (min-width: $tablet1) {
+        width: 22px;
+        height: 22px;
+        right: 14px;
+      }
+      @media screen and (min-width: $desktop1) {
+        width: 27px;
+        height: 27px;
+        right: 16px;
+      }
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    top: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    @media screen and (min-width: $tablet1) {
+      height: 55px;
+      width: 36px;
+      justify-content: flex-start;
+    }
+    @media screen and (min-width: $desktop1) {
+      height: 70px;
+      width: 44px;
+    }
+
+    & svg {
+      position: relative;
+      top: 0;
+      right: 0 !important;
+      transform: translateY(0);
+      fill: $black;
+    }
+  }
+}
+
+#ui-datepicker-div {
+  background-color: #fff;
+  border: 2px solid $white;
+  padding: 0;
+  border-radius: 0;
+  width: calc(100% - 30px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  z-index: 101 !important;
+  @media screen and (min-width: $tablet1) {
+    width: 250px;
+  }
+
+  & .ui-datepicker-title {
+    font-family: 'Charter';
+    font-weight: 700;
+    color: $black;
+    font-size: 15px;
+    padding-bottom: 2px;
+  }
+
+  & .ui-datepicker-month {
+    width: calc(60% - 5px);
+    font-family: 'Charter';
+    font-weight: 700;
+    border: 1px solid $black;
+    margin-right: 10px;
+  }
+
+  & .ui-datepicker-year {
+    width: calc(40% - 5px);
+    font-family: 'Charter';
+    font-weight: 700;
+    border: 1px solid $black;
+  }
+
+  & .ui-datepicker-header{
+    background-color: $white;
+    border: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  & .ui-icon {
+    width: 16px;
+    height: 16px;
+  }
+  & .ui-icon,
+  & .ui-widget-content .ui-icon {
+    background-image: url("http://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_444444_256x240.png");
+  }
+  & .ui-widget-header .ui-icon {
+    background-image: url("http://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_444444_256x240.png");
+  }
+  & .ui-state-hover .ui-icon,
+  & .ui-state-focus .ui-icon,
+  & .ui-button:hover .ui-icon,
+  & .ui-button:focus .ui-icon {
+    background-image: url("http://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_555555_256x240.png");
+  }
+  & .ui-state-active .ui-icon,
+  & .ui-button:active .ui-icon {
+    background-image: url("http://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_ffffff_256x240.png");
+  }
+  & .ui-state-highlight .ui-icon,
+  & .ui-button .ui-state-highlight.ui-icon {
+    background-image: url("http://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_777620_256x240.png");
+  }
+  & .ui-state-error .ui-icon,
+  & .ui-state-error-text .ui-icon {
+    background-image: url("http://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_cc0000_256x240.png");
+  }
+  & .ui-button .ui-icon {
+    background-image: url("http://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_777777_256x240.png");
+  }
+
+  & .ui-icon-circle-triangle-e { background-position: -48px -192px; }
+  & .ui-icon-circle-triangle-s { background-position: -64px -192px; }
+  & .ui-icon-circle-triangle-w { background-position: -80px -192px; }
+  & .ui-icon-circle-triangle-n { background-position: -96px -192px; }
+
+  & .ui-datepicker-prev,
+  & .ui-datepicker-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    border: none;
+    margin: 0;
+    opacity: 1;
+    top: 1px !important;
+
+    &:hover {
+      background-color: $white;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+  }
+
+  & .ui-datepicker-prev {
+    left: 1px !important
+  }
+
+  & .ui-datepicker-next {
+    right: 1px !important;
+  }
+
+  & .ui-datepicker-calendar{
+    font-family: 'Charter';
+    font-size: 13px;
+    font-weight: 700;
+    color: $black;
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 10px;
+  }
+
+  & th{
+    font-size: 13px;
+    padding: 7px 0;
+  }
+
+  & td{
+    padding: 1px;
+  }
+
+  & .ui-state-default{
+    display: block;
+    font-family: 'Charter';
+    font-weight: 400;
+    color: $black;
+    font-size: 13px;
+    background-color: $white;
+    border: 1px solid $gray;
+    border-radius: 0;
+    width: 100%;
+    min-width: 30px;
+    height: 30px;
+    padding: 3px;
+
+    &:hover{
+      background-color: $blue-light-hover;
+      color: $white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  }
+
+  & .ui-state-highlight,
+  & .ui-state-highlight:hover{
+    border: 1px solid $gray;
+    color: $black;
+    font-weight: 700;
+    opacity: 1;
+  }
+
+  & .ui-state-active,
+  & .ui-state-active:hover{
+    background-color: $blue-light-hover;
+    color: $white;
+    font-weight: 700;
+    opacity: 1;
+  }
+
+  & .ui-state-disabled {
+    opacity: 0.35 !important;
+    background-color: transparent !important;
+    color: $black !important;
+
+    & .ui-state-default {
+      background-color: transparent !important;
+      color: $black !important;
+    }
+  }
+
+  & .ui-datepicker-buttonpane{
+    display: none;
+  }
+}

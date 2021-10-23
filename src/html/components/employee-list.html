@@ -1,0 +1,46 @@
+<section class="employee">
+  <div class="container">
+    @@if (context.title) {
+    <h2 class="title title-h2 title-blue">@@context.title</h2>
+    }
+
+    <ul class="employee__list">
+      @@for (var i = 0; i < context.arr.length; i++) {
+      <li class="employee__item">
+        <div class="employee__box">
+          <div class="employee__box-img">
+            <img src="`+context.arr[i].img+`" alt="">
+          </div>
+          <div class="employee__box-name">`+context.arr[i].name+`</div>
+          <div class="employee__box-position">`+context.arr[i].position+`</div>
+          <a class="employee__box-link" href="`+context.arr[i].link+`"></a>
+        </div>
+      </li>
+      }
+    </ul>
+
+    <div class="employee__down">
+      <div class="btn btn-s">Показать еще</div>
+      @@if (context.pagination) {
+      <div class="row">
+
+        @@include("./pagination.html")
+
+        <div class="sort">
+          <div class="sort__text">Показывать по:</div>
+          <div class="input__box">
+            @@include("./select.html", {
+              context: {
+                "placeholder": "",
+                arr: ['15', '30', '60', '120']
+              }
+            })
+          </div>
+        </div>
+
+      </div>
+      }
+    </div>
+
+  </div>
+</section>

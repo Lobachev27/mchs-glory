@@ -1,0 +1,130 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.biography {
+  padding: 60px 0;
+  background-color: $gray-light;
+  @media screen and (min-width: $tablet2) {
+    padding: 80px 0;
+  }
+
+  &__info {
+    width: 100%;
+    max-width: 990px;
+    margin: 0 auto;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 20px auto 0;
+    @media screen and (min-width: $tablet1) {
+      margin: 40px auto 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-bottom: 20px;
+    @media screen and (min-width: $tablet1) {
+      padding-left: 50px;
+      padding-bottom: 40px;
+    }
+
+    &:before {
+      @media screen and (min-width: $tablet1) {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 100%;
+        border-left: 1px dashed $blue;
+        top: 18px;
+        left: 10px;
+      }
+    }
+
+    &:after {
+      @media screen and (min-width: $tablet1) {
+        content: '';
+        position: absolute;
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        background-color: $blue;
+        width: 20px;
+        height: 20px;
+        top: 4px;
+        left: 0;
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &__year {
+    font-size: 16px;
+    font-weight: 700;
+    color: $blue;
+    line-height: 22px;
+    @media screen and (min-width: $tablet1) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @media screen and (min-width: $tablet2) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  &__caption {
+    font-size: 16px;
+    font-weight: 700;
+    color: $black;
+    line-height: 22px;
+    margin-bottom: 3px;
+    @media screen and (min-width: $tablet1) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @media screen and (min-width: $tablet2) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 22px;
+    @media screen and (min-width: $tablet1) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @media screen and (min-width: $tablet2) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    & p {
+      line-height: 22px;
+      @media screen and (min-width: $tablet1) {
+        line-height: 24px;
+      }
+      @media screen and (min-width: $tablet2) {
+        line-height: 26px;
+      }
+    }
+
+    & a {
+      color: $orange;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+        transition: opacity 0.3s;
+      }
+    }
+  }
+}

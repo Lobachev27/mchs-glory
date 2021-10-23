@@ -1,0 +1,95 @@
+@import "partials/params";
+@import "partials/mixins";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  font-family: 'Charter';
+  font-weight: 400;
+  font-size: 14px;
+  background-color: $white;
+  color: $black;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
+  /*padding-top: 60px;*/
+  z-index: 2;
+  /*@media screen and (min-width: $tablet1) {
+    padding-top: 70px;
+  }
+  @media screen and (min-width: $tablet2) {
+    padding-top: 85px;
+  }*/
+
+  &.main-page {
+    min-height: 100vh;
+    @media screen and (min-width: $desktop1) {
+      padding-top: 0;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $black;
+  line-height: 1.2em;
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  color: $black;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1340px;
+  padding: 0 15px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ov-hid{
+  overflow-y: hidden !important;
+}

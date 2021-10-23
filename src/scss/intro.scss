@@ -1,0 +1,681 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.intro {
+  position: relative;
+  padding: 120px 0 80px;
+  width: 100%;
+  background-color: $blue;
+  margin-bottom: calc(25vw + 3px);
+  z-index: 3;
+  @media screen and (min-width: $desktop1) {
+    margin-bottom: 0;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../img/intro-bg.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    opacity: 0.12;
+  }
+
+  & .container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__description {
+    font-size: 18px;
+    color: $white;
+    letter-spacing: 0.04em;
+    line-height: 1.4em;
+    @media screen and (min-width: $tablet1) {
+      font-size: 22px;
+      max-width: 700px;
+    }
+    @media screen and (min-width: $desktop1) {
+      font-size: 30px;
+      max-width: 980px;
+    }
+  }
+
+  &.intro-slider {
+    @media screen and (min-width: $tablet1) {
+      padding: 170px 0 100px;
+    }
+    @media screen and (min-width: $tablet2) {
+      padding: 205px 0 120px;
+    }
+    @media screen and (min-width: $desktop1) {
+      height: 100vh;
+      padding: 145px 0 60px;
+    }
+    @media screen and (min-width: $desktop3) {
+      height: 100vh;
+      padding: 185px 0 100px;
+    }
+
+    & .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    & .intro__info {
+      @media screen and (min-width: $desktop1) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+    }
+
+    & .intro__bottom {
+      display: flex;
+      margin-top: 60px;
+      @media screen and (min-width: $tablet1) {
+        margin-top: 80px;
+      }
+      @media screen and (min-width: $tablet2) {
+        margin-top: 100px;
+      }
+      @media screen and (min-width: $desktop1) {
+        margin-top: 0;
+      }
+    }
+
+    & .intro__text {
+      font-size: 14px;
+      line-height: 1.3em;
+      color: $white;
+      margin-right: 30px;
+      @media screen and (min-width: $tablet1) {
+        font-size: 16px;
+        margin-right: 60px;
+      }
+      @media screen and (min-width: $tablet2) {
+        font-size: 18px;
+      }
+
+      & span {
+        font-family: 'Proxima Nova';
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 32px;
+        @media screen and (min-width: $tablet1) {
+          font-size: 36px;
+        }
+        @media screen and (min-width: $tablet2) {
+          font-size: 40px;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & .intro__images-mobile {
+      position: absolute;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
+      top: calc(100% + 0.6vw);
+      width: 100%;
+      padding-bottom: 0.6vw;
+      /*overflow-x: auto;
+      overflow-y: visible;*/
+      @media screen and (min-width: $desktop1) {
+        display: none;
+      }
+
+      /*&::-webkit-scrollbar {
+        -webkit-appearance: none;
+        height: 4px;
+        width: 4px;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 4px #98B7D3;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $orange;
+        border-radius: 4px;
+        outline: none;
+        background-clip: border-box;
+        cursor: pointer;
+      }*/
+
+      & .intro__images__wrap {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        animation: ticker 40s infinite linear;
+      }
+
+      & .intro__images__list {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-right: -6px;
+        @media screen and (min-width: 540px) {
+          margin-right: -8px;
+        }
+        @media screen and (min-width: $tablet1) {
+          margin-right: -1.6vw;
+        }
+      }
+
+      & .intro__img {
+        position: relative;
+        overflow: hidden;
+        min-width: 32vw;
+        margin-right: -15.2vw;
+        height: 25vw;
+
+        &:nth-child(odd) {
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        &:nth-child(even) {
+          clip-path: polygon(50% 100%, 0 0, 100% 0);
+        }
+
+        &:first-child {
+          margin-left: -15.2vw;
+        }
+
+        /*&:first-child {
+          clip-path: polygon(0 0, 0% 100%, 100% 100%);
+          min-width: 15.833vw;
+        }
+
+        &:last-child:not(:nth-child(odd)) {
+          clip-path: polygon(100% 0, 0 0, 100% 100%);
+          min-width: 15.833vw;
+        }
+
+        &:last-child:not(:nth-child(even)) {
+          clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+          min-width: 15.833vw;
+        }*/
+
+        & img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-position: center;
+          object-fit: cover;
+        }
+      }
+    }
+
+    & .intro__images-desktop {
+      display: none;
+      @media screen and (min-width: $desktop1) {
+        display: block;
+        position: absolute;
+        overflow: visible;
+        /*width: 67.89vh;*/
+        width: 65vh;
+        height: 100%;
+        margin: 0;
+        top: 0;
+        right: 0;
+      }
+
+      & .intro__img {
+        position: absolute;
+        overflow: hidden;
+        min-width: calc(66.66% - 4px);
+        height: 37%;
+        background-color: rgba(255,255,255, 0.5);
+
+        &:nth-child(odd) {
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        &:nth-child(even) {
+          clip-path: polygon(50% 100%, 0 0, 100% 0);
+        }
+
+        &:nth-child(1) {
+          @media screen and (min-width: $desktop1) {
+            bottom: calc(74% + 8px);
+            left: calc(66.66% + 2px);
+          }
+
+          & img {
+            &:nth-child(1) {
+              -webkit-animation-delay: 10s;
+            }
+            &:nth-child(2) {
+              -webkit-animation-delay: -14s;
+            }
+            &:nth-child(3) {
+              -webkit-animation-delay: -2s;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          @media screen and (min-width: $desktop1) {
+            bottom: calc(37% + 4px);
+            left: calc(66.66% + 4px);
+          }
+
+          & img {
+            &:nth-child(1) {
+              -webkit-animation-delay: 6s;
+            }
+            &:nth-child(2) {
+              -webkit-animation-delay: -18s;
+            }
+            &:nth-child(3) {
+              -webkit-animation-delay: -6s;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          @media screen and (min-width: $desktop1) {
+            bottom: calc(37% + 4px);
+            left: calc(33.33% + 2px);
+          }
+
+          & img {
+            &:nth-child(1) {
+              -webkit-animation-delay: 0s;
+            }
+            &:nth-child(2) {
+              -webkit-animation-delay: -24s;
+            }
+            &:nth-child(3) {
+              -webkit-animation-delay: -12s;
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          @media screen and (min-width: $desktop1) {
+            bottom: 0;
+            left: calc(33.33% + 2px);
+          }
+
+          & img {
+            &:nth-child(1) {
+              -webkit-animation-delay: 8s;
+            }
+            &:nth-child(2) {
+              -webkit-animation-delay: -16s;
+            }
+            &:nth-child(3) {
+              -webkit-animation-delay: -4s;
+            }
+          }
+        }
+
+        &:nth-child(5) {
+          @media screen and (min-width: $desktop1) {
+            bottom: 0;
+            left: 0;
+          }
+
+          & img {
+            &:nth-child(1) {
+              -webkit-animation-delay: 2s;
+            }
+            &:nth-child(2) {
+              -webkit-animation-delay: -22s;
+            }
+            &:nth-child(3) {
+              -webkit-animation-delay: -10s;
+            }
+          }
+        }
+
+        &:nth-child(6) {
+          @media screen and (min-width: $desktop1) {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            bottom: 0;
+            left: calc(66.66% + 4px);
+          }
+
+          & img {
+            &:nth-child(1) {
+              -webkit-animation-delay: 4s;
+            }
+            &:nth-child(2) {
+              -webkit-animation-delay: -20s;
+            }
+            &:nth-child(3) {
+              -webkit-animation-delay: -8s;
+            }
+          }
+        }
+
+        &:nth-child(n+7) {
+          display: none;
+        }
+
+        & img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-position: center;
+          object-fit: cover;
+          animation-name: fade;
+          animation-iteration-count: infinite;
+          animation-duration: 36s;
+        }
+      }
+    }
+  }
+
+  &.intro-list {
+    height: 500px;
+    @media screen and (min-width: $tablet1) {
+      height: 640px;
+    }
+
+    & .intro {
+      &__info {
+        max-width: 950px;
+      }
+
+      &__images {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        top: calc(100% + 0.6vw);
+        width: 100%;
+        overflow: hidden;
+        @media screen and (min-width: $desktop1) {
+          width: 420px;
+          height: 100%;
+          margin: 0;
+          top: 0;
+          right: 0;
+          overflow: visible;
+        }
+        @media screen and (min-width: $desktop3) {
+          right: 20px;
+        }
+      }
+
+      &__img {
+        position: relative;
+        overflow: hidden;
+        min-width: 32vw;
+        margin-right: -15.2vw;
+        height: 25vw;
+        @media screen and (min-width: $desktop1) {
+          position: absolute;
+          min-width: 290px;
+          height: 250px;
+        }
+
+        &:nth-child(odd) {
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        &:nth-child(even) {
+          clip-path: polygon(50% 100%, 0 0, 100% 0);
+        }
+
+        &:first-child {
+          clip-path: polygon(0 0, 0% 100%, 100% 100%);
+          min-width: 15.833vw;
+          @media screen and (min-width: $desktop1) {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            min-width: 290px;
+          }
+        }
+
+        &:last-child:not(:nth-child(odd)) {
+          clip-path: polygon(100% 0, 0 0, 100% 100%);
+          min-width: 15.833vw;
+          @media screen and (min-width: $desktop1) {
+            min-width: 290px;
+          }
+        }
+
+        &:last-child:not(:nth-child(even)) {
+          clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+          min-width: 15.833vw;
+          @media screen and (min-width: $desktop1) {
+            min-width: 290px;
+          }
+        }
+
+        &:nth-child(1) {
+          @media screen and (min-width: $desktop1) {
+            bottom: 504px;
+            left: 294px;
+          }
+        }
+        &:nth-child(2) {
+          @media screen and (min-width: $desktop1) {
+            bottom: 252px;
+            left: 294px;
+          }
+        }
+        &:nth-child(3) {
+          @media screen and (min-width: $desktop1) {
+            bottom: 252px;
+            left: 147px;
+          }
+        }
+        &:nth-child(4) {
+          @media screen and (min-width: $desktop1) {
+            bottom: 0;
+            left: 147px;
+          }
+        }
+        &:nth-child(5) {
+          @media screen and (min-width: $desktop1) {
+            bottom: 0;
+            left: 0;
+          }
+        }
+        &:nth-child(6) {
+          @media screen and (min-width: $desktop1) {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            bottom: 0;
+            left: 294px;
+          }
+        }
+        &:nth-child(7) {
+          @media screen and (min-width: $desktop1) {
+            display: none;
+          }
+        }
+
+        & img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-position: center;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &.intro-detail {
+    padding: 100px 0 80px;
+    margin-bottom: 0;
+    @media screen and (min-width: $tablet2) {
+      padding: 160px 0 100px;
+    }
+
+    & .container {
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: $tablet2) {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    & .intro {
+      &__info {
+        max-width: 100%;
+        @media screen and (min-width: $tablet2) {
+          margin-left: 30px;
+        }
+
+        & .title-h1 {
+          font-size: 26px;
+          text-align: center;
+          @media screen and (min-width: $tablet1) {
+            font-size: 38px;
+          }
+          @media screen and (min-width: $tablet2) {
+            font-size: 50px;
+            text-align: left;
+          }
+          @media screen and (min-width: $desktop1) {
+            font-size: 60px;
+          }
+        }
+      }
+
+      &__date {
+        font-size: 16px;
+        font-weight: 700;
+        color: $white;
+        text-align: center;
+        margin-bottom: 5px;
+        @media screen and (min-width: $tablet1) {
+          font-size: 18px;
+        }
+        @media screen and (min-width: $tablet2) {
+          text-align: left;
+        }
+        @media screen and (min-width: $desktop1) {
+          font-size: 20px;
+        }
+      }
+
+      &__description {
+        font-size: 16px;
+        text-align: center;
+        @media screen and (min-width: $tablet1) {
+          font-size: 18px;
+        }
+        @media screen and (min-width: $tablet2) {
+          text-align: left;
+          max-width: 780px;
+        }
+        @media screen and (min-width: $desktop1) {
+          font-size: 20px;
+        }
+      }
+
+      &__img {
+        width: 290px;
+        height: 360px;
+        margin-bottom: 20px;
+        @media screen and (min-width: $tablet2) {
+          width: 290px;
+          min-width: 310px;
+          height: 420px;
+          margin-bottom: 0;
+        }
+
+        & img {
+          width: 100%;
+          height: 100%;
+          object-position: center top;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &.intro-awards {
+      & .container {
+        @media screen and (min-width: $tablet2) {
+          align-items: center;
+        }
+      }
+
+      & .intro {
+        &__img {
+          width: 100%;
+          height: 324px;
+          @media screen and (min-width: $tablet1) {
+            height: 380px;
+          }
+          @media screen and (min-width: $tablet2) {
+            height: 420px;
+            width: 310px;
+            min-width: 310px;
+          }
+
+          & img {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  20% {opacity: 1;}
+  33% {opacity: 1;}
+  53% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+@-webkit-keyframes fade {
+  0% {opacity: 0;}
+  20% {opacity: 1;}
+  33% {opacity: 1;}
+  53% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+@keyframes ticker-i {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@-webkit-keyframes ticker-i {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}

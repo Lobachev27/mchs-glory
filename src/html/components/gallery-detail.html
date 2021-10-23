@@ -1,0 +1,7 @@
+<section class="gallery-detail">
+  <div class="gallery-detail__wrap">
+    @@for (var i = 0; i < context.arr.length; i++) {
+    <a href="`+context.arr[i]+`" data-fslightbox="gallery1" class="gallery-detail__item"><img src="`+context.arr[i]+`" alt=""></a>
+    }
+  </div>
+</section>

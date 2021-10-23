@@ -1,0 +1,312 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.awards {
+  position: relative;
+
+  &__list {
+    list-style: none;
+    z-index: 2;
+  }
+
+  &__item {
+    position: relative;
+
+    & .container {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      @media screen and (min-width: $tablet2) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &:nth-child(odd) {
+      @media screen and (min-width: $tablet2) {
+        margin-top: 0;
+      }
+    }
+
+    &:nth-child(even) {
+      padding: 60px 0;
+      @media screen and (min-width: $tablet1) {
+        padding: 120px 0;
+      }
+      @media screen and (min-width: $tablet2) {
+        padding: 180px 0 0;
+        margin-top: -180px;
+      }
+      @media screen and (min-width: $desktop1) {
+        padding: 220px 0 0;
+        margin-top: -220px;
+      }
+
+      & .awards__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100vw;
+        background-color: $blue;
+        z-index: -1;
+
+        &-img {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 100vw;
+          background: url("../img/awards-bg.jpg") no-repeat;
+          background-position: center;
+          background-size: cover;
+          opacity: 0.12;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          border-right: 50vw solid transparent;
+          border-left: 50vw solid $white;
+          border-bottom: 30px solid transparent;
+          border-top: 30px solid $white;
+          z-index: 2;
+          pointer-events: none;
+          @media screen and (min-width: $tablet1) {
+            border-bottom: 60px solid transparent;
+            border-top: 60px solid $white;
+          }
+          @media screen and (min-width: $tablet2) {
+            border-bottom: 90px solid transparent;
+            border-top: 90px solid $white;
+          }
+          @media screen and (min-width: $desktop1) {
+            border-bottom: 110px solid transparent;
+            border-top: 110px solid $white;
+          }
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          border-left: 50vw solid transparent;
+          border-right: 50vw solid $white;
+          border-top: 30px solid transparent;
+          border-bottom: 30px solid $white;
+          z-index: 2;
+          pointer-events: none;
+          @media screen and (min-width: $tablet1) {
+            border-top: 60px solid transparent;
+            border-bottom: 60px solid $white;
+          }
+          @media screen and (min-width: $tablet2) {
+            border-top: 90px solid transparent;
+            border-bottom: 90px solid $white;
+          }
+          @media screen and (min-width: $desktop1) {
+            border-top: 110px solid transparent;
+            border-bottom: 110px solid $white;
+          }
+        }
+      }
+
+      & .awards__box-img {
+        @media screen and (min-width: $tablet2) {
+          order: 2;
+        }
+      }
+
+      & .awards__box-name {
+        color: $white;
+      }
+
+      & .awards__box-description {
+        color: $white;
+      }
+    }
+
+    &:first-child {
+      padding-top: 40px;
+      margin-top: 0!important;
+
+      &:before {
+        @media screen and (min-width: $desktop1) {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 308px;
+          height: 508px;
+          background: url("../img/triangle-03.png") no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+    }
+
+    &:last-child:not(:nth-child(odd)) {
+      border-bottom: 7px solid $blue-light-hover;
+
+      & .awards__bg {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    &:last-child:not(:nth-child(even)) {
+      padding-bottom: 40px;
+      @media screen and (min-width: $tablet2) {
+        padding-bottom: 0;
+      }
+
+      &:before {
+        @media screen and (min-width: $desktop1) {
+          content: '';
+          position: absolute;
+          bottom: 90px;
+          right: 0;
+          width: 308px;
+          height: 508px;
+          transform: rotate(180deg);
+          background: url("../img/triangle-03.png") no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    @media screen and (min-width: $tablet2) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &-img {
+      position: relative;
+      min-width: 229px;
+      height: 324px;
+      overflow: hidden;
+      @media screen and (min-width: $tablet1) {
+        min-width: 250px;
+        width: 250px;
+        height: 380px;
+      }
+      @media screen and (min-width: $tablet2) {
+        min-width: 250px;
+        width: 250px;
+        height: 468px;
+      }
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: contain;
+      }
+    }
+
+    &-info {
+      margin-top: 20px;
+      @media screen and (min-width: $tablet2) {
+        margin-top: 40px;
+        min-width: 590px;
+        width: 590px;
+      }
+    }
+
+    &-name {
+      font-family: 'Proxima Nova';
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 28px;
+      text-align: center;
+      color: $blue;
+      text-transform: uppercase;
+      @media screen and (min-width: $tablet1) {
+        font-size: 30px;
+        line-height: 36px;
+      }
+      @media screen and (min-width: $tablet2) {
+        font-size: 40px;
+        line-height: 44px;
+        text-align: left;
+        max-width: 640px;
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      margin: 10px 0 20px;
+      @media screen and (min-width: $tablet1) {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 12px 0 20px;
+      }
+      @media screen and (min-width: $tablet2) {
+        font-size: 20px;
+        line-height: 28px;
+        max-width: 570px;
+        text-align: left;
+        margin: 15px 0 30px;
+      }
+    }
+
+    & .btn {
+      width: max-content;
+      margin: 0 auto;
+
+      @media screen and (min-width: $tablet2) {
+        margin: 0;
+      }
+    }
+  }
+
+  &-history {
+    padding: 60px 0;
+    background-color: $gray-light;
+    @media screen and (min-width: $tablet2) {
+      padding: 80px 0;
+    }
+
+    &__info {
+      width: 100%;
+      max-width: 990px;
+      margin: 0 auto;
+    }
+
+    &__description {
+      font-size: 16px;
+      margin-top: 20px;
+      @media screen and (min-width: $tablet1) {
+        font-size: 18px;
+      }
+      @media screen and (min-width: $tablet2) {
+        font-size: 20px;
+      }
+
+      & p {
+        line-height: 1.4em;
+      }
+    }
+  }
+}

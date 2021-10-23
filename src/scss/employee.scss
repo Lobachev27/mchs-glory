@@ -1,0 +1,511 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.employee {
+  padding: 60px 0;
+  @media screen and (min-width: $tablet2) {
+    padding: 80px 0;
+  }
+
+  & .container {
+    max-width: 990px;
+    margin: 0 auto;
+  }
+
+  & .title {
+    margin-bottom: 20px;
+    @media screen and (min-width: $tablet2) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    max-width: 285px;
+    width: 100%;
+    margin: 0 auto 40px;
+    @media screen and (min-width: $tablet1) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 630px;
+    }
+    @media screen and (min-width: $tablet2) {
+      justify-content: center;
+      max-width: 990px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    margin-bottom: 20px;
+    @media screen and (min-width: $tablet1) {
+      width: 300px;
+      margin: 30px 0 0;
+    }
+    @media screen and (min-width: $tablet2) {
+      width: calc(33.333% - 20px);
+      max-width: 300px;
+      margin-top: 50px;
+      margin-right: 30px;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      @media screen and (min-width: $tablet1) {
+        margin-top: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      @media screen and (min-width: $tablet2) {
+        margin-top: 0;
+      }
+    }
+
+    &:nth-child(3n) {
+      @media screen and (min-width: $tablet2) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-last-child(1) {
+      @media screen and (min-width: $tablet2) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+
+    &:hover {
+      & .employee__box-img:before {
+        border: 8px solid $orange;
+        transition: border 0.3s;
+      }
+
+      & .employee__box-name {
+        color: $orange;
+        transition: color 0.3s;
+      }
+    }
+
+    &-img {
+      position: relative;
+      background-color: $white;
+      width: 100%;
+      height: 360px;
+      overflow: hidden;
+      margin: 0 auto;
+      @media screen and (min-width: $tablet1) {
+        height: 380px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: 0 solid transparent;
+        transition: border 0.3s;
+        z-index: 2;
+      }
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-position: center top;
+        object-fit: cover;
+      }
+    }
+
+    &-name {
+      font-size: 30px;
+      text-align: center;
+      color: $black;
+      margin: 10px auto 15px;
+      width: 100%;
+      transition: color 0.3s;
+    }
+
+    &-position {
+      position: relative;
+      font-size: 20px;
+      text-align: center;
+      line-height: 1.3em;
+      padding-top: 20px;
+      margin: 0 auto;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 18px;
+        top: 5px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url("../img/line.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    &-link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &__down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    @media screen and (min-width: $tablet1) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding-bottom: 120px;
+    }
+    @media screen and (min-width: $desktop1) {
+      margin-top: 60px;
+    }
+
+    & .row {
+      width: 100%;
+      justify-content: space-between;
+      @media screen and (min-width: $tablet1) {
+        margin-top: 40px;
+      }
+    }
+
+    & .btn {
+      width: 100%;
+    }
+  }
+
+  &-slider {
+    position: relative;
+    padding: 60px 0 40px;
+    @media screen and (min-width: $tablet2) {
+      padding: 80px 0;
+    }
+    @media screen and (min-width: $desktop1) {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      border-top: 85px solid $blue;
+      padding: 0;
+    }
+
+    &:before {
+      @media screen and (min-width: $desktop1) {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 308px;
+        height: 508px;
+        background: url("../img/triangle-03.png") no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    & .row {
+      flex-direction: column;
+      @media screen and (min-width: $tablet2) {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    & .title {
+      position: relative;
+      @media screen and (min-width: $tablet1) {
+        width: max-content;
+        padding-right: 50px;
+      }
+      @media screen and (min-width: $tablet2) {
+        padding-right: 60px;
+      }
+
+      & a {
+        color: $blue;
+        transition: color 0.3s;
+
+        &:before {
+          @media screen and (min-width: $tablet1) {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 36px;
+            height: 28px;
+            background: url("../img/arrow-right.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+            transform: translateY(-50%);
+            transition: background 0.3s;
+          }
+          @media screen and (min-width: $tablet2) {
+            width: 44px;
+            height: 32px;
+          }
+        }
+
+        &:hover {
+          color: $orange;
+          transition: color 0.3s;
+
+          &:before {
+            @media screen and (min-width: $tablet1) {
+              background: url("../img/arrow-right-orange.svg") no-repeat;
+              background-position: center;
+              background-size: contain;
+              transition: background 0.3s;
+            }
+          }
+        }
+      }
+    }
+
+    &__count {
+      font-size: 16px;
+      line-height: 22px;
+      margin: 10px 0 0;
+      @media screen and (min-width: $tablet1) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      @media screen and (min-width: $tablet2) {
+        font-size: 20px;
+        line-height: 26px;
+        margin: 0;
+      }
+    }
+
+    &__wrap {
+      position: relative;
+      width: 290px;
+      padding: 0 40px;
+      margin: 30px auto 0;
+      @media screen and (min-width: 540px) {
+        width: 510px;
+        padding: 0 35px;
+      }
+      @media screen and (min-width: $tablet1) {
+        width: 570px;
+        padding: 0 60px;
+      }
+      @media screen and (min-width: $tablet2) {
+        width: 100%;
+        padding: 0 70px;
+      }
+      @media screen and (min-width: $desktop1) {
+        margin: 20px auto 0;
+        padding: 0 42px;
+      }
+      @media screen and (min-width: $desktop2) {
+        width: calc(100% + 140px);
+        margin-left: -70px;
+        margin-right: -70px;
+      }
+      @media screen and (min-width: 1680px) {
+        padding: 0 70px;
+        margin-top: 40px;
+      }
+
+      & .swiper-container {
+        position: relative;
+        width: 210px;
+        height: 340px;
+        margin: 0 auto;
+        @media screen and (min-width: 540px) {
+          width: 440px;
+        }
+        @media screen and (min-width: $tablet1) {
+          width: 450px;
+        }
+        @media screen and (min-width: $tablet2) {
+          width: 640px;
+          height: 620px;
+        }
+        @media screen and (min-width: $desktop1) {
+          width: 1085px;
+        }
+        @media screen and (min-width: $desktop2) {
+          width: 1310px;
+        }
+        @media screen and (min-width: 1680px) {
+          height: 712px;
+        }
+      }
+
+      & .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      & .swiper-slide {
+        height: 316px;
+        @media screen and (min-width: $tablet2) {
+          height: 295px;
+        }
+        @media screen and (min-width: 1680px) {
+          height: 336px;
+        }
+      }
+
+      & .employee-slider__navigation {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 36px;
+        pointer-events: none;
+        @media screen and (min-width: $tablet1) {
+          height: 56px;
+          top: 37%;
+        }
+        @media screen and (min-width: $tablet2) {
+          top: 47%;
+        }
+
+        & .swiper-button-next,
+        & .swiper-button-prev {
+          position: absolute;
+          outline: none;
+          width: 36px;
+          height: 36px;
+          display: block;
+          top: 50%;
+          opacity: 1;
+          pointer-events: auto;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          transition: opacity 0.3s;
+          @media screen and (min-width: $tablet1) {
+            width: 56px;
+            height: 56px;
+          }
+
+          &.swiper-button-disabled {
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+          }
+
+          &:after {
+            content: '';
+          }
+
+          & svg {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            fill: $gray;
+            transform:  fill 0.3s;
+            @media screen and (min-width: $tablet1) {
+              width: 56px;
+              height: 56px;
+            }
+          }
+
+          &:hover{
+            & svg {
+              fill: $orange;
+              transition: fill 0.3s;
+            }
+          }
+        }
+
+        & .swiper-button-prev {
+          left: -7px;
+          @media screen and (min-width: $tablet1) {
+            left: -12px;
+          }
+          @media screen and (min-width: $desktop1) {
+            left: -22px;
+          }
+          @media screen and (min-width: $desktop2) {
+            left: 0;
+          }
+          @media screen and (min-width: $desktop3) {
+            left: -12px;
+          }
+        }
+
+        & .swiper-button-next {
+          right: -7px;
+          @media screen and (min-width: $tablet1) {
+            right: -12px;
+          }
+          @media screen and (min-width: $desktop1) {
+            right: -22px;
+          }
+          @media screen and (min-width: $desktop2) {
+            right: 0;
+          }
+          @media screen and (min-width: $desktop3) {
+            right: -12px;
+          }
+
+          & svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      & .employee__box {
+        width: 210px;
+        @media screen and (min-width: $tablet2) {
+          width: 193px;
+        }
+        @media screen and (min-width: 1680px) {
+          width: 230px;
+        }
+
+        &-img {
+          height: 260px;
+          @media screen and (min-width: $tablet1) {
+            height: 260px;
+          }
+          @media screen and (min-width: $tablet2) {
+            height: 239px;
+          }
+          @media screen and (min-width: 1680px) {
+            height: 280px;
+          }
+        }
+
+        &-name {
+          font-size: 20px;
+          min-height: 46px;
+          margin: 10px auto 0;
+        }
+      }
+    }
+  }
+}

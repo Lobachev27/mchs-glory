@@ -1,0 +1,23 @@
+<section class="awards">
+  <ul class="awards__list">
+    @@for (var i = 0; i < context.arr.length; i++) {
+    <li class="awards__item">
+      <div class="awards__bg">
+        <div class="awards__bg-img"></div>
+      </div>
+      <div class="container">
+        <div class="awards__box">
+          <div class="awards__box-img">
+            <img src="`+context.arr[i].img+`" alt="">
+          </div>
+          <div class="awards__box-info">
+            <div class="awards__box-name">`+context.arr[i].name+`</div>
+            <div class="awards__box-description">`+context.arr[i].description+`</div>
+            <a class="btn btn-s" href="`+context.arr[i].link+`">Подробнее о награде</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    }
+  </ul>
+</section>

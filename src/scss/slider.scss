@@ -1,0 +1,34 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.main-page {
+  & > .swiper-container {
+    position: relative;
+    width: 100%;
+    @media screen and (min-width: $desktop1) {
+      height: 100vh;
+    }
+
+    & > .swiper-wrapper {
+      position: relative;
+      display: block;
+      width: 100%;
+      @media screen and (min-width: $desktop1) {
+        display: flex;
+      }
+
+      & > .swiper-slide {
+        position: relative;
+        width: 100%;
+        @media screen and (min-width: $desktop1) {
+          height: 100vh;
+          /*pointer-events: none;*/
+        }
+
+        &.swiper-slide-active {
+          z-index: 2;
+        }
+      }
+    }
+  }
+}

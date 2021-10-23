@@ -1,0 +1,15 @@
+<section class="intro intro-detail @@if (context.awards) {intro-awards}">
+  <div class="intro__bg"></div>
+  <div class="container">
+    <div class="intro__img">
+      <img src="@@context.img" alt="">
+    </div>
+    <div class="intro__info">
+      @@if (context.date) {
+      <div class="intro__date">@@context.date</div>
+      }
+      <h1 class="title title-h1 title-white">@@context.title</h1>
+      <div class="intro__description">@@context.description</div>
+    </div>
+  </div>
+</section>
